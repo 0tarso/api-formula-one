@@ -2,22 +2,25 @@ import { HttpStatusCode } from "./http-status-code";
 
 interface HttpResponse {
   statusCode: number;
-  body: {
+  body?: {
     message: string,
     content: any
   }
 }
 
 
-export const HttpResponseFormat = async (data: any): Promise<HttpResponse> => {
-
-
+export const HttpResponseOK = async (data: any): Promise<HttpResponse> => {
   return {
-    statusCode: 200,
+    statusCode: HttpStatusCode.OK,
     body: {
-      message: String(HttpStatusCode.OK),
+      message: `${String(HttpStatusCode.OK)} - OK`,
       content: data,
     }
   }
+}
 
+export const HttpResponseNoContent = async (): Promise<HttpResponse> => {
+  return {
+    statusCode: HttpStatusCode.NO_CONTENT,
+  }
 }
