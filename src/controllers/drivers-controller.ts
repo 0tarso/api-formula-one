@@ -1,12 +1,13 @@
 import { Request, Response } from "express";
-import { HttpStatusCode } from "../utils/http-status-code";
-import { getDriverService } from "../services/drivers/get-driver-service";
-import { HttpResponseOK } from "../utils/http-helper";
-import { getDriversListService } from "../services/drivers/get-drivers-list-service";
+import { getDriverByIdService } from "../services/drivers/get-driver-by-id-service";
+import { getAllDriversService } from "../services/drivers/get-all-drivers-service";
 
-export const getDriver = async (req: Request, res: Response) => {
 
-  const httpResponse = await getDriverService()
+export const getDriverById = async (req: Request, res: Response) => {
+
+  const id = parseInt(req.params.id)
+
+  const httpResponse = await getDriverByIdService(id)
 
   res.status(httpResponse.statusCode).json(httpResponse.body)
 }
@@ -14,7 +15,7 @@ export const getDriver = async (req: Request, res: Response) => {
 
 export const getAllDrivers = async (req: Request, res: Response) => {
 
-  const httpResponse = await getDriversListService()
+  const httpResponse = await getAllDriversService()
 
   res.status(httpResponse.statusCode).json(httpResponse.body)
 }

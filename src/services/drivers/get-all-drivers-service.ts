@@ -1,9 +1,9 @@
 import * as DriverRepository from "../../repositories/drivers-repository";
 import { HttpResponseNoContent, HttpResponseOK } from "../../utils/http-helper";
 
-export const getDriverService = async () => {
+export const getAllDriversService = async () => {
 
-  const data = await DriverRepository.findDriverById()
+  const data = await DriverRepository.findAllDrivers()
 
   let response = null
 
