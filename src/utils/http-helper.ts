@@ -35,11 +35,11 @@ export const HttpResponseCreated = async (data: any): Promise<HttpResponse> => {
   }
 }
 
-export const HttpResponseBadRequest = async (): Promise<HttpResponse> => {
+export const HttpResponseBadRequest = async (message: string): Promise<HttpResponse> => {
   return {
     statusCode: HttpStatusCode.BAD_REQUEST,
     body: {
-      message: `${String(HttpStatusCode.BAD_REQUEST)} - Bad Request`,
+      message: `${String(HttpStatusCode.BAD_REQUEST)} - ${message}`,
       content: {},
     }
   }

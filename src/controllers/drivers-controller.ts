@@ -28,8 +28,6 @@ export const postDriver = async (req: Request, res: Response) => {
 
   const body: DriverModel = req.body
 
-  console.log(body)
-
   const httpResponse = await postDriverService(body)
 
   res.status(httpResponse.statusCode).json(httpResponse.body)
