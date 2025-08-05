@@ -2,8 +2,9 @@ import { DriverModel } from "../../models/driver-model";
 import { HttpResponseBadRequest, HttpResponseNotFound, HttpResponseUpdated } from "../../utils/http-helper";
 import * as DriverRepository from "../../repositories/drivers-repository"
 import { PartialUpdateDriverSchema } from "../../schemas/driver.schema";
+import { DriverModelDTO } from "../../models/driver-model-DTO";
 
-export const updateDriverByIdService = async (id: number, driver: Omit<DriverModel, 'id'>) => {
+export const updateDriverByIdService = async (id: number, driver: DriverModelDTO) => {
   let response = null
 
   if (!id) {

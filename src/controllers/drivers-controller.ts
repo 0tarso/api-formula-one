@@ -6,6 +6,7 @@ import { DriverModel } from "../models/driver-model";
 import { postDriverService } from "../services/drivers/post-driver-service";
 import { deleteDriverByIdService } from "../services/drivers/delete-driver-by-id-service";
 import { updateDriverByIdService } from "../services/drivers/update-driver-by-id-service";
+import { DriverModelDTO } from "../models/driver-model-DTO";
 
 
 export const getDriverById = async (req: Request, res: Response) => {
@@ -48,7 +49,7 @@ export const deleteDriverById = async (req: Request, res: Response) => {
 export const updateDriverById = async (req: Request, res: Response) => {
   const id = parseInt(req.params.id)
 
-  const body: Omit<DriverModel, 'id'> = req.body
+  const body: DriverModelDTO = req.body
 
   const httpResponse = await updateDriverByIdService(id, body)
 
