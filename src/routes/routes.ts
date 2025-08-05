@@ -9,4 +9,6 @@ router.post("/drivers", DriverController.postDriver)
 
 router.delete("/drivers/:id", DriverController.deleteDriverById)
 
+router.patch("/drivers/:id", DriverController.updateDriverById)
+
 export default router

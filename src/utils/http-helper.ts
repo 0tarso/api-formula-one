@@ -54,3 +54,13 @@ export const HttpResponseNotFound = async (message: string): Promise<HttpRespons
     }
   }
 }
+
+export const HttpResponseUpdated = async (data: any): Promise<HttpResponse> => {
+  return {
+    statusCode: HttpStatusCode.OK,
+    body: {
+      message: `${String(HttpStatusCode.OK)} - Updated`,
+      content: data,
+    }
+  }
+}

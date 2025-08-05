@@ -8,3 +8,12 @@ export const DriverSchema = z.object({
   age: z.number(),
 })
 
+export const UpdateDriverSchema = z.object({
+  name: z.string(),
+  country: z.string(),
+  team: z.string(),
+  age: z.number(),
+})
+
+export const PartialUpdateDriverSchema = UpdateDriverSchema.partial().strict()
+

@@ -53,3 +53,16 @@ export const deleteDriver = async (id: number) => {
   return "Success"
 
 }
+
+export const updateDriver = async (id: number, driver: Omit<DriverModel, 'id'>) => {
+  const driverIndex = drivers.findIndex(driver => driver.id === id)
+
+  if (driverIndex === -1) return
+
+  const driverUptaded = drivers[driverIndex] = {
+    ...drivers[driverIndex],
+    ...driver
+  };
+
+  return driverUptaded
+}
