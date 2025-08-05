@@ -9,10 +9,10 @@ export const deleteDriverByIdService = async (id: number) => {
     return response
   }
 
-  const data = await DriverRepository.deleteDriver(id)
+  const isDeleted = await DriverRepository.deleteDriver(id)
 
-  if (data) {
-    response = await HttpResponseOK(data)
+  if (isDeleted) {
+    response = await HttpResponseOK({ message: "deleted" })
   }
   else {
     response = await HttpResponseNotFound("Driver not found")

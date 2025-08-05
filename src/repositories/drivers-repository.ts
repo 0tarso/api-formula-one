@@ -46,11 +46,11 @@ export const insertDriver = async (driver: DriverModel): Promise<DriverModel | u
 export const deleteDriver = async (id: number) => {
   const driverIndexDelete = drivers.findIndex(driver => driver.id === id);
 
-  if (driverIndexDelete === -1) return
+  if (driverIndexDelete === -1) return false
 
   const driverDeleted = drivers.splice(driverIndexDelete, 1)[0];
 
-  return "Success"
+  return true
 
 }
 
