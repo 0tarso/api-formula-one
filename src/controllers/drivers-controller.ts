@@ -4,6 +4,7 @@ import { getAllDriversService } from "../services/drivers/get-all-drivers-servic
 import { HttpResponseOK } from "../utils/http-helper";
 import { DriverModel } from "../models/driver-model";
 import { postDriverService } from "../services/drivers/post-driver-service";
+import { deleteDriverByIdService } from "../services/drivers/delete-driver-by-id-service";
 
 
 export const getDriverById = async (req: Request, res: Response) => {
@@ -31,4 +32,14 @@ export const postDriver = async (req: Request, res: Response) => {
   const httpResponse = await postDriverService(body)
 
   res.status(httpResponse.statusCode).json(httpResponse.body)
+}
+
+
+export const deleteDriverById = async (req: Request, res: Response) => {
+  const id = parseInt(req.params.id)
+
+  const httpResponse = await deleteDriverByIdService(id)
+
+  res.status(httpResponse?.statusCode).json(httpResponse.body)
+
 }

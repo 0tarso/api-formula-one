@@ -44,3 +44,13 @@ export const HttpResponseBadRequest = async (message: string): Promise<HttpRespo
     }
   }
 }
+
+export const HttpResponseNotFound = async (message: string): Promise<HttpResponse> => {
+  return {
+    statusCode: HttpStatusCode.NOT_FOUND,
+    body: {
+      message: `${String(HttpStatusCode.NOT_FOUND)} - ${message}`,
+      content: {},
+    }
+  }
+}
