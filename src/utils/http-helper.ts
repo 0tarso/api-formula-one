@@ -24,3 +24,23 @@ export const HttpResponseNoContent = async (): Promise<HttpResponse> => {
     statusCode: HttpStatusCode.NO_CONTENT,
   }
 }
+
+export const HttpResponseCreated = async (data: any): Promise<HttpResponse> => {
+  return {
+    statusCode: HttpStatusCode.CREATED,
+    body: {
+      message: `${String(HttpStatusCode.CREATED)} - Created`,
+      content: data,
+    }
+  }
+}
+
+export const HttpResponseBadRequest = async (): Promise<HttpResponse> => {
+  return {
+    statusCode: HttpStatusCode.BAD_REQUEST,
+    body: {
+      message: `${String(HttpStatusCode.BAD_REQUEST)} - Bad Request`,
+      content: {},
+    }
+  }
+}
