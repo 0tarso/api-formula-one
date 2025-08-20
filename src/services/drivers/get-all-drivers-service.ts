@@ -1,5 +1,11 @@
-import * as DriverRepository from "../../repositories/in-memory-drivers-repository.ts";
 import { HttpResponseNoContent, HttpResponseOK } from "../../utils/http-helper";
+
+//Dados salvos em memória
+// import * as DriverRepository from "../../repositories/in-memory-drivers-repository.ts";
+
+//Dados salvos no Supabase
+import * as DriverRepository from "../../repositories/supabase-drivers-repository/index";
+
 
 export const getAllDriversService = async () => {
 

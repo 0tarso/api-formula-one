@@ -1,7 +1,9 @@
+import { TeamModel } from "./team-model";
+
 export interface DriverModel {
   id: number;
   name: string;
-  team: string;
+  team: TeamModel;
   age: number;
   country: string;
 }
