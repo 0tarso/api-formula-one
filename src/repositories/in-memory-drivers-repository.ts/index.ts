@@ -1,4 +1,5 @@
-import { DriverModel } from "../models/driver-model";
+import { DriverModel } from "../../models/driver-model";
+import { SupabaseService } from "../../services/supabase/supabase-service";
 
 export const drivers: DriverModel[] = [
   { id: 1, name: "george russell", team: "mercedes", age: 27, country: "united kingdom" },

@@ -1,4 +1,4 @@
-import * as DriverRepository from "../../repositories/drivers-repository";
+import * as DriverRepository from "../../repositories/in-memory-drivers-repository.ts";
 import { HttpResponseNoContent, HttpResponseOK } from "../../utils/http-helper";
 
 export const getAllDriversService = async () => {

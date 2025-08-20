@@ -1,5 +1,5 @@
 import { HttpResponseBadRequest, HttpResponseNotFound, HttpResponseOK } from "../../utils/http-helper"
-import * as DriverRepository from "../../repositories/drivers-repository"
+import * as DriverRepository from "../../repositories/in-memory-drivers-repository.ts"
 
 export const deleteDriverByIdService = async (id: number) => {
   let response = null

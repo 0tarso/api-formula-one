@@ -1,6 +1,6 @@
 import { DriverModel } from "../../models/driver-model";
 import { DriverSchema } from "../../schemas/driver.schema";
-import * as DriverRepository from "../../repositories/drivers-repository";
+import * as DriverRepository from "../../repositories/in-memory-drivers-repository.ts";
 import { HttpResponseBadRequest, HttpResponseCreated } from "../../utils/http-helper";
 
 
